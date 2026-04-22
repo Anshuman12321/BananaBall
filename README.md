@@ -26,6 +26,12 @@ uvicorn main:app --reload --host 127.0.0.1 --port 8000
 
 The API runs at `http://127.0.0.1:8000`. Interactive docs: `http://127.0.0.1:8000/docs`.
 
+Alternatively, you can run from the repository root without `cd backend`:
+
+```bash
+python -m uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
+```
+
 **Endpoints**
 
 - `GET /health` — `{ "status": "ok" }`

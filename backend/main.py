@@ -1,6 +1,17 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+try:
+    # When run from repo root: `uvicorn backend.main:app`
+    from backend.app.api.routes.games import router as games_router
+    from backend.app.api.routes.players import router as players_router
+    from backend.app.api.routes.users import router as users_router
+except ModuleNotFoundError:
+    # When run from backend/ directory: `uvicorn main:app`
+    from app.api.routes.games import router as games_router
+    from app.api.routes.players import router as players_router
+    from app.api.routes.users import router as users_router
+
 app = FastAPI(title="Capstone API")
 
 app.add_middleware(
@@ -23,3 +34,8 @@ def health():
 @app.get("/api/hello")
 def hello():
     return {"message": "Hello from FastAPI"}
+
+
+app.include_router(users_router)
+app.include_router(players_router)
+app.include_router(games_router)
