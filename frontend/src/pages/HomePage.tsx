@@ -39,19 +39,15 @@ export function HomePage() {
       <header className="page-header">
         <h1>Fantasy League</h1>
         <p className="lede">
-          Navigate with the menu above to manage your draft settings, roster, and
-          check the league table. The frontend handles all interaction and
-          presentation; the API powers live data as you connect it.
+          Welcome to BananaBall Fantasy League Simulator, where you can play a simualted game of Fantasy Basketball with your Friends!
         </p>
       </header>
 
-      <section className="card" aria-live="polite">
-        <h2>API status</h2>
+      <section>
         {loading && <p className="muted">Checking backend…</p>}
         {!loading && error && (
           <p className="error-msg">
-            Could not reach the backend ({error}). Start it with{' '}
-            <code>uvicorn main:app --reload</code> from <code>backend</code>.
+
           </p>
         )}
         {!loading && !error && data && (

@@ -45,7 +45,7 @@ export function TeamPage() {
                       {row.pos}
                     </span>
                   </td>
-                  <td>{row.nflTeam}</td>
+                  <td>{row.nbaTeam}</td>
                   <td>{row.proj?.toFixed(1) ?? '—'}</td>
                 </tr>
               ))}
@@ -75,7 +75,7 @@ export function TeamPage() {
                   <td>
                     <span className={`pos pos-${row.pos}`}>{row.pos}</span>
                   </td>
-                  <td>{row.nflTeam}</td>
+                  <td>{row.nbaTeam}</td>
                   <td>{row.proj?.toFixed(1) ?? '—'}</td>
                 </tr>
               ))}

@@ -25,8 +25,8 @@ function App() {
         <div className="brand">
           <span className="brand-mark" aria-hidden="true" />
           <div>
-            <span className="brand-title">Fantasy League</span>
-            <span className="brand-sub">Capstone</span>
+            <span className="brand-title">BananaBall Fantasy League</span>
+            <span className="brand-sub">Capstone II</span>
           </div>
         </div>
         <nav className="main-nav" aria-label="Main">
