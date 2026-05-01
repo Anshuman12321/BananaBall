@@ -183,12 +183,15 @@ class GameService:
                     STORE.players[pid] = player.model_copy(update={"stats": merged})
 
             simulation_events = [*game.simulation_events, *sim_result.events]
+            standings = dict(game.standings)
+            standings.update(sim_result.updated_standings)
             next_game = game.model_copy(
                 update={
                     "status": GameStatus.in_progress
                     if game.status in (GameStatus.lobby, GameStatus.drafting)
                     else game.status,
                     "current_week": sim_result.week,
+                    "standings": standings,
                     "simulation_events": simulation_events,
                     "updated_at": datetime.now(timezone.utc),
                 }
