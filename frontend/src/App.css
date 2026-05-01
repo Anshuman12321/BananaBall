@@ -1063,6 +1063,15 @@
   font-variant-numeric: tabular-nums;
 }
 
+.status-item.draft-progress-action strong {
+  color: inherit;
+  font-variant-numeric: unset;
+}
+
+.status-item.draft-progress-action .primary-cta {
+  align-self: flex-start;
+}
+
 .draft-timer {
   display: flex;
   align-items: center;
@@ -1095,6 +1104,19 @@
   color: #adb8d3;
   padding: 0.25rem 0.75rem;
   font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.week-progress-panel {
+  padding: 1rem 1.25rem;
+}
+
+.week-progress-panel p {
+  margin: 0;
+}
+
+.week-progress-success {
+  color: #86efac;
   font-weight: 800;
 }
 
@@ -1576,6 +1598,12 @@
 
 .cap-obligation-list strong.positive {
   color: #86efac;
+}
+
+.standings-empty {
+  margin: 0;
+  color: #94a3b8;
+  padding: 1rem;
 }
 
 .team-hero {
